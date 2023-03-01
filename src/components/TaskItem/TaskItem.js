@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteTask, toggleStatus } from 'redux/todoOperations';
 
@@ -27,7 +27,7 @@ const TaskItem = ({ task, i, handleModal }) => {
           <input
             className="checkbox"
             type="checkbox"
-            defaultChecked={status}
+            checked={status}
             onChange={handleToggle}
           />
           <button className="btnDel" onClick={hendleDelete}>
@@ -39,6 +39,15 @@ const TaskItem = ({ task, i, handleModal }) => {
   );
 };
 
-TaskItem.propTypes = {};
+TaskItem.propTypes = {
+  handleModal: PropTypes.func.isRequired,
+  i: PropTypes.number.isRequired,
+  task: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    status: PropTypes.bool.isRequired,
+  }).isRequired,
+};
 
 export default TaskItem;

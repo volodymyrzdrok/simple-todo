@@ -3,6 +3,8 @@ import { toggleStatus } from 'redux/todoOperations';
 import { toggleModal } from 'redux/todoSlice';
 import s from './TaskInfo.module.css';
 
+import PropTypes from 'prop-types';
+
 const TaskInfo = ({ task }) => {
   const dispatch = useDispatch();
 
@@ -28,6 +30,14 @@ const TaskInfo = ({ task }) => {
       <button onClick={() => dispatch(toggleModal())}> Close </button>
     </div>
   );
+};
+TaskInfo.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    status: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default TaskInfo;

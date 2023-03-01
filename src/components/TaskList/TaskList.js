@@ -29,16 +29,7 @@ const TaskList = () => {
           </tr>
         </thead>
         <tbody>
-          {showModal &&
-            tasks.map((task, i) => (
-              <TaskItem
-                key={task.id}
-                task={task}
-                i={i}
-                handleModal={handleModal}
-              />
-            ))}
-          {!showModal &&
+          {tasks.length > 0 &&
             tasks.map((task, i) => (
               <TaskItem
                 key={task.id}

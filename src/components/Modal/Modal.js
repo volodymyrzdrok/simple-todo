@@ -1,5 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import c from './Modal.module.css';
+// import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 import { toggleModal } from 'redux/todoSlice';
