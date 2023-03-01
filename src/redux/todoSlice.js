@@ -33,6 +33,7 @@ const todoSlise = createSlice({
       .addCase(fetchTasks.fulfilled, (state, { payload }) => {
         state.tasks = payload;
       })
+
       .addCase(toggleStatus.fulfilled, (state, { payload }) => {
         const index = state.tasks.findIndex(c => c.id === payload.id);
         state.tasks.splice(index, 1, payload);
@@ -76,4 +77,5 @@ export const todoReduces = todoSlise.reducer;
 export const selectTasks = state => state.todo.tasks;
 export const selectIsLoading = state => state.todo.isLoading;
 export const selectShowModal = state => state.todo.showModal;
+
 export const { toggleModal } = todoSlise.actions;

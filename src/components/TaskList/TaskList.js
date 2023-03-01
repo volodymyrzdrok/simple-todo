@@ -2,15 +2,13 @@ import Modal from 'components/Modal/Modal';
 import TaskItem from 'components/TaskItem/TaskItem';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectTasks } from 'redux/todoSlice';
 import TaskInfo from 'components/TaskInfo/TaskInfo';
-import { selectShowModal, toggleModal } from 'redux/todoSlice';
+import { selectShowModal, toggleModal, selectTasks } from 'redux/todoSlice';
 
 const TaskList = () => {
-  const tasks = useSelector(selectTasks);
-
   const dispatch = useDispatch();
   const [objTaskModal, setObjTaskModal] = useState(null);
+  const tasks = useSelector(selectTasks);
 
   const showModal = useSelector(selectShowModal);
 
@@ -31,7 +29,16 @@ const TaskList = () => {
           </tr>
         </thead>
         <tbody>
-          {tasks.length > 0 &&
+          {showModal &&
+            tasks.map((task, i) => (
+              <TaskItem
+                key={task.id}
+                task={task}
+                i={i}
+                handleModal={handleModal}
+              />
+            ))}
+          {!showModal &&
             tasks.map((task, i) => (
               <TaskItem
                 key={task.id}
@@ -42,6 +49,7 @@ const TaskList = () => {
             ))}
         </tbody>
       </table>
+
       {showModal && <Modal children={<TaskInfo task={objTaskModal} />} />}
     </>
   );
