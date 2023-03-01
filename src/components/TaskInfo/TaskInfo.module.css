@@ -1,0 +1,27 @@
+.container {
+  min-height: 200px;
+  min-width: 540px;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px;
+}
+.container * {
+  font-size: 12px;
+}
+.title {
+  text-align: center;
+  margin-top: 0;
+}
+.statusContainer {
+  display: flex;
+  align-items: center;
+}
+.status {
+  font-weight: 500;
+  margin-right: 10px;
+}
+.checkbox {
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+}

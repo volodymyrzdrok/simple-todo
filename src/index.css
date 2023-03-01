@@ -1,7 +1,8 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
-  margin: 0;
+  margin: 20px 50px;
+  background-color: rgb(128, 128, 128, 0.4);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -12,4 +13,101 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+form {
+  display: flex;
+  align-items: center;
+  width: 70vw;
+  margin-bottom: 20px;
+}
+label {
+  margin-right: 90px;
+  width: 100%;
+}
+button {
+  margin-top: 8px;
+  padding: 2px 15px;
+  height: max-content;
+}
+input {
+  margin-top: 10px;
+  width: 100%;
+  padding: 3px 15px;
+}
+
+table {
+  display: grid;
+  border-collapse: collapse;
+  width: 65vw;
+  grid-template-columns:
+    minmax(100px, 0.5fr)
+    minmax(100px, 1fr)
+    minmax(100px, 1fr)
+    minmax(100px, 1fr);
+}
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+th,
+td {
+  padding: 5px 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  background: #b8b8ba;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+td {
+  background: #737374;
+  padding: 15px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.checkbox {
+  width: 15x;
+  height: 15px;
+  margin: auto 0;
+}
+
+.loader {
+  position: relative;
+  width: 65vw;
+  padding: 0;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.btnDelCont {
+  position: relative;
+}
+.btnDel {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  right: 2px;
+  bottom: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 11px;
+  transition: all 300ms ease-in-out;
+}
+
+.btnDel:hover {
+  transform: scale(1.11);
 }

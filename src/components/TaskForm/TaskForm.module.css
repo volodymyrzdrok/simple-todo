@@ -1,0 +1,17 @@
+.inputDefault {
+  outline: none;
+}
+.textDefault {
+  margin: 3px;
+  font-size: 12px;
+  color: transparent;
+}
+
+.errMessage {
+  composes: textDefault;
+  color: red;
+}
+.borderRedInp {
+  composes: inputDefault;
+  border: 1px solid #ff0000;
+}
